@@ -4,8 +4,10 @@ const message = `
 
     Segenap keluarga besar RT [RT 030] mengucapkan Selamat Hari Raya Idul Fitri 1445 H.
 
-    Mohon Maaf Lahir dan Batin. Semoga kita semua kembali fitri.
-    
+    Taqabbalallahu Minna Wa Minkum. Semoga Allah menerima amal ibadah kita semua.
+
+    Mohon Maaf Lahir dan Batin. Semoga silaturahmi kita semakin erat dan kita semua diberkahi kesehatan dan kebahagiaan.
+
     Wassalamu'alaikum Wr. Wb.
 `;
 let charIndex = 0;
