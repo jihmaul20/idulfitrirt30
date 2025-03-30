@@ -23,6 +23,14 @@ body::before {
     z-index: -1;
 }
 
+audio {
+    /* display: none; */  /* Jangan sembunyikan audio jika ingin debugging mudah */
+    position: fixed; /* Untuk memastikan tidak mengganggu tata letak */
+    bottom: 10px;    /* Posisi di sudut bawah */
+    left: 10px;
+    z-index: 9999;   /* Pastikan di atas elemen lain */
+}
+
 .container {
     position: relative;
     width: 100%;
