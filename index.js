@@ -10,8 +10,28 @@ const message = `
 
     Wassalamu'alaikum Wr. Wb.
 `;
+
 let charIndex = 0;
 const bgm = document.getElementById('bgm');
+function playAudio() {
+    const playPromise = bgm.play();
+    if (playPromise !== undefined) {
+        playPromise
+            .then(() => {
+                // Autoplay started!
+                bgm.muted = false; // Unmute jika awalnya muted
+            })
+            .catch(error => {
+                // Autoplay was prevented.
+                console.log("Autoplay dicegah:", error);
+            });
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    typeWriter();
+    playAudio();
+});
 
 function typeWriter() {
     if (charIndex < message.length) {
@@ -29,8 +49,3 @@ document.addEventListener('DOMContentLoaded', () => {
         bgm.muted = false;
     }, message.length * 30 + 1000);  // Hitung perkiraan waktu animasi + sedikit tambahan
 });
-
-// Contoh: Pause musik saat pesan selesai diketik (opsional)
-// messageElement.addEventListener('animationend', () => {
-//     bgm.pause();
-// });
