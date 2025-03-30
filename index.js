@@ -13,6 +13,15 @@ const message = `
 
 let charIndex = 0;
 const bgm = document.getElementById('bgm');
+
+function typeWriter() {
+    if (charIndex < message.length) {
+        messageElement.innerHTML += message.charAt(charIndex);
+        charIndex++;
+        setTimeout(typeWriter, 30);
+    }
+}
+
 function playAudio() {
     const playPromise = bgm.play();
     if (playPromise !== undefined) {
@@ -29,23 +38,6 @@ function playAudio() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    typeWriter();
-    playAudio();
-});
-
-function typeWriter() {
-    if (charIndex < message.length) {
-        messageElement.innerHTML += message.charAt(charIndex);
-        charIndex++;
-        setTimeout(typeWriter, 30);
-    }
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-    typeWriter();
-
-    // Un-mute audio setelah animasi typing selesai
-    setTimeout(() => {
-        bgm.muted = false;
-    }, message.length * 30 + 1000);  // Hitung perkiraan waktu animasi + sedikit tambahan
+    playAudio(); // Putar musik segera setelah halaman dimuat
+    typeWriter(); // Mulai animasi typing
 });
