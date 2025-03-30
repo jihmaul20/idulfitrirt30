@@ -2,7 +2,7 @@ const messageElement = document.getElementById('eid-message-text');
 const message = `
     Assalamu'alaikum Wr. Wb.
 
-    Segenap keluarga besar RT [RT 030] mengucapkan Selamat Hari Raya Idul Fitri 1445 H.
+    Kami, keluarga besar RT [RT 030] mengucapkan Selamat Hari Raya Idul Fitri 1445 H.
 
     Taqabbalallahu Minna Wa Minkum. Semoga Allah menerima amal ibadah kita semua.
 
