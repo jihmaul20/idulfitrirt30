@@ -23,14 +23,6 @@ body::before {
     z-index: -1;
 }
 
-audio {
-    /* display: none; */  /* Jangan sembunyikan audio jika ingin debugging mudah */
-    position: fixed; /* Untuk memastikan tidak mengganggu tata letak */
-    bottom: 10px;    /* Posisi di sudut bawah */
-    left: 10px;
-    z-index: 9999;   /* Pastikan di atas elemen lain */
-}
-
 .container {
     position: relative;
     width: 100%;
@@ -51,6 +43,7 @@ audio {
     color: white;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
     animation: fadeIn 2s ease-in-out;
+    z-index: 2; /* Pastikan card di atas lantern */
 }
 
 @keyframes fadeIn {
@@ -88,7 +81,7 @@ p.eid-message {
     font-size: 16px;
     font-family: 'Poppins', sans-serif;
     line-height: 1.5;
-    white-space: pre-wrap; /* Tambahkan ini */
+    white-space: pre-wrap;
 }
 
 .rt-name {
@@ -100,8 +93,9 @@ p.eid-message {
 
 .lantern-container {
     position: absolute;
-    top: 10%;
-    left: 10%;
+    top: 3%; /* Ubah dari 50% menjadi 10% atau nilai yang Anda inginkan */
+    left: 50%;
+    transform: translateX(-50%); /* Hapus translateY karena hanya perlu tengah horizontal */
     width: 100px;
     height: 100px;
     border-radius: 50%;
@@ -109,11 +103,12 @@ p.eid-message {
     background-size: cover;
     background-position: center;
     animation: swing 3s ease-in-out infinite alternate, flicker 2s linear infinite;
+    z-index: 3; /* Pastikan lantern di atas card */
 }
 
 @keyframes swing {
-    from { transform: translateY(0px) rotate(-5deg); }
-    to { transform: translateY(15px) rotate(5deg); }
+    from { transform: translateY(-5px) translateX(-50%) rotate(-5deg); }
+    to { transform: translateY(10px) translateX(-50%) rotate(5deg); }
 }
 
 @keyframes flicker {
